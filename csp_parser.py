@@ -4,16 +4,17 @@ from requests import get, exceptions
 import click
 from socket import gethostbyname, gaierror
 from sys import version_info, exit
+from urllib.parse import urlparse
 
-if version_info[0] == 2:
-    from urlparse import urlparse
-elif version_info[0] == 3:
-    import urllib.parse.urlsplit as urlparse
+#if version_info[0] == 2:
+#    from urlparse import urlparse
+#elif version_info[0] == 3:
+#    import urllib.parse.urlsplit as urlparse
 
 import logging
 import tldextract
 import json
-import pythonwhois
+import whois
 
 logging.basicConfig(
     level=logging.INFO,
